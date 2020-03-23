@@ -31,4 +31,18 @@ console.warn('error');
 console.timeEnd('hola');
 
 
+// cambiar un numero a string
+
+const numero1 = "50",
+    numero2 = 10,
+    numero3 = 'tres';
+
+console.log(numero1+numero2);
+//lo anterior concatena las constantes, ya que las detecta de diferente tipo de dato
+
+//para evitar lo anterior se convierte a numero usando Number
+
+console.log (Number(numero3)+numero2);
+
+
  
