@@ -85,6 +85,168 @@ console.log (logueado === true ? 'Si se logueo' : 'no se logueo');
 
 
 // De acuerdo con el valor de una variable, ejecutar un grupo u otro de sentencias (Switch-Case)
-// Ejecutar un grupo de sentencias solo cuando se cumpla una condición (Do-While)
-// Ejecutar un grupo de sentencias hasta que se cumpla una condición (Do-Until)
+const metodoPago = prompt('Ingrese su metodo de pago');
+
+switch (metodoPago) {
+    case 'efectivo':
+        console.log(`El usuario pago con ${metodoPago}`);
+        break;
+    case 'cheque':
+        console.log(`El usuario pago con ${metodoPago}`);
+        break;
+    case 'tarjeta':
+        console.log(`El usuario pago con ${metodoPago}`);
+        break;
+    default:
+        console.log('metodo de pago no soportado');
+        break;
+}
+
+
+//caso dos
+
+const fecha = new Date();
+
+console.log(fecha.getMonth());
+
+let mes;
+switch (new Date().getMonth()) {
+    case 0:
+        mes = 'Enero'
+        break;
+    case 1:
+        mes = 'Febrero'
+        break;
+    case 2:
+        mes = 'Marzo'
+        break;
+    case 3:
+        mes = 'Abril'
+        break;
+    case 4:
+        mes = 'Mayo'
+        break;
+    case 5:
+        mes = 'Junio'
+        break;
+    case 6:
+        mes = 'Julio'
+        break;
+    case 7:
+        mes = 'Agosto'
+        break;
+    case 8:
+        mes = 'Septiembre'
+        break;
+    case 9:
+        mes = 'Octubre'
+        break;
+    case 10:
+        mes = 'Noviembre'
+        break;
+    case 11:
+        mes = 'Diciembre'
+        break;
+
+    default:
+        break;
+}
+
+console.log(`Este mes es ${mes}`);
+
 // Ejecutar un grupo de sentencias un número determinado de veces (For-Next)
+
+for(let i = 0; i <= 10 ; i++){
+    if(i == 5){
+        console.log('Voy en el numero 5');
+        continue; //evita que se imprima dos veces el 5, si se coloca un break termina la ejecucion del for
+    }
+    console.log(`Numeros: ${i}`);
+}
+
+
+for (let i = 0; i < 10; i++) {
+    if(i % 2 == 0){
+        console.log(`El numero ${i} es Par`);
+    }else{
+        console.log(`El numero ${i} es Impar`);
+    }
+    
+}
+
+const arregloRopa = ['camisa', 'boleto', 'guitarra', 'disco'];
+
+for(let i = 0; i < arregloRopa.length; i++){
+    console.log(`tu producto ${arregloRopa[i]} fue agregado`);
+}
+
+// Ejecutar un grupo de sentencias solo cuando se cumpla una condición (While)
+
+let i = 0;
+
+while(i < 10){
+    console.log(`numero: ${i}`);
+    i++;
+}
+
+const musica = ['cancion1', 'cancion2', 'cancion3'];
+i = 0;
+
+while(i < musica.length){
+    console.log(`Reproduciendo la cancion ${musica[i]}`);
+    i++;
+}
+
+
+
+// Ejecutar un grupo de sentencias por lo menos una vez 
+
+i = 100;
+do{
+     console.log(`Numero: ${i}`);
+     i++;
+}while(i < 10);
+
+
+// Recorrer un arreglo con forEach
+
+const pendientes = ['tarea', 'comer', 'proyecto', 'aprender js'];
+
+//for
+for (let i = 0; i < pendientes.length; i++) {
+    console.log(pendientes[i]);    
+}
+
+//forEach
+console.log('con forEach');
+pendientes.forEach(function(pendiente){
+    console.log(`${pendiente}`);
+});
+
+//map para recorrer un arreglo de objetos
+
+const carrito = [
+    {id: 1, producto: 'Libro'},
+    {id: 2, producto: 'Camisa'},
+    {id: 3, producto: 'Guitarra'},
+    {id: 4, producto: 'Disco'}
+];
+
+const nombreProducto = carrito.map(function(carrito){
+    return carrito.producto;
+});
+
+console.log(nombreProducto);
+
+//recorrer objeto con for
+
+const automovil = {
+    modelo: 'camaro',
+    motor: 6.2,
+    anio: 1969,
+    marca: 'chevrolet'
+}
+
+for (let auto in automovil){
+    console.log(`${auto}: ${automovil[auto]}`); 
+}
