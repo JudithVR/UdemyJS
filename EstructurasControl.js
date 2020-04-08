@@ -250,3 +250,93 @@ const automovil = {
 for (let auto in automovil){
     console.log(`${auto}: ${automovil[auto]}`); 
 }
+
+//iteradores de javaScript
+
+const ciudades = ['londres', 'new york', 'madrid', 'paris'];
+const ordenes = new Set ([123,234,123,134]); //set no tiene llave, la llave y el valor es el mismo
+const datos = new Map();
+
+datos.set('nombre','juan');
+datos.set('profesion','desarrollador web');
+
+
+//Entries iterador
+
+console.log("iterador entries");
+for (let entrada of ciudades.entries()){
+    console.log(entrada);
+}
+
+for(let orden of ordenes.entries()){
+    console.log(orden);
+}
+
+for(let dato of datos.entries()){
+    console.log(dato);
+}
+
+//values iterador
+console.log("iterador values");
+
+//para un arreglo no se debe poner values, ya que por default toma ese iterador
+for (let entrada of ciudades){
+    console.log(entrada);
+}
+
+for(let orden of ordenes.values()){
+     console.log(orden);
+}
+
+for(let dato of datos.values()){
+     console.log(dato);
+}
+
+//keys iterador
+console.log("iterador keys");
+
+for (let entrada of ciudades.keys()){
+    console.log(entrada);
+}
+
+for(let orden of ordenes.keys()){
+     console.log(orden);
+}
+
+for(let dato of datos.keys()){
+     console.log(dato);
+}
+
+//iterador por default
+console.log("iterador default");
+
+for (let entrada of ciudades){
+    console.log(entrada);
+}
+
+for(let orden of ordenes){
+     console.log(orden);
+}
+
+for(let dato of datos){
+     console.log(dato);
+}
+
+//iterador para un string
+
+console.log("iterador para string");
+
+const mensaje = "Aprendiendo Js"
+for(let letra of mensaje){
+    console.log(letra);
+}
+
+//iterador para un nodelist
+
+console.log("iterador para nodelist");
+
+const enlaces = document.getElementsByTagName('a');
+
+for (let enlace of enlaces){
+    console.log(enlace.href);
+}
