@@ -1,6 +1,8 @@
 // Eliminar de Local Storage
 // localStorage.clear();
 
+//tranajndo con el Dom
+
 let elemento;
 
 elemento = document; //manda todo el contenido del html
@@ -51,5 +53,52 @@ encabezado = document.getElementById("encabezado").textContent;
 
 encabezado = document.getElementById("encabezado").innerText;
 
+//modificaciones al estilo de un elemento del dom
+encabezado = document.getElementById('encabezado');
+encabezado.style.background = '#333';
+encabezado.style.color = '#fff';
+encabezado.style.padding = '20px';
+
+//modificando el texto
+
+encabezado.textContent = 'Los mejores cursos';
+
 // //textontent e innerText regresan lo mismo
 console.log(encabezado);
+
+
+//query selector
+
+let encabeza =document.querySelector('#encabezado');
+
+//se utiliza # para indicdar que es un id
+//un . para indicar que es una clase
+
+encabeza = document.querySelector('h2');
+
+//se pueden aplicar las mismas propiedades que con getElementById
+
+
+console.log(encabeza);
+
+//para seleccionar todos los elementos con una misma clase o etiqueta
+
+let elementos = document.querySelectorAll('.enlace');
+console.log(elementos);
+
+
+//creando selector con dos propiedades
+let enlace;
+
+// como parametro que manda la primera propiedad que indica que es un id y el segundo una etiqueta, indicando que se quiere el primer hijo
+enlace = document.querySelector('#principal a:first-child');
+
+//para un elemento del medio, etre () se  indica cual se quiere
+enlace = document.querySelector('#principal a:nth-child(3)');
+
+//para el ultimo elemento
+
+enlace = document.querySelector('#principal a:last-child');
+
+
+console.log(enlace);
