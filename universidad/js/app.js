@@ -102,3 +102,29 @@ enlace = document.querySelector('#principal a:last-child');
 
 
 console.log(enlace);
+
+//seleccionando multiples elementos
+
+const enlaces = document.getElementsByClassName('enlace'); //regresa una coleccion con los enlaces
+
+//usando querySelector con getElemenet
+
+const listaEnlaces = document.querySelector('#principal').getElementsByClassName('enlace');
+
+
+
+console.log(listaEnlaces);
+
+let links = document.querySelectorAll('#principal a:nth-child(odd)'); //obtiene los enlaces impares
+
+//para aplicar ccs a un conjunto de elementos
+links.forEach(function(impares){
+    impares.style.backgroundColor = 'red';
+    impares.style.color ='white';
+
+});
+
+console.log(links);
+
+
+//traversing
