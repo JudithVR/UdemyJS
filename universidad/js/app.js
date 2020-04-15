@@ -127,4 +127,48 @@ links.forEach(function(impares){
 console.log(links);
 
 
-//traversing
+//traversing del padre al hijo
+
+const navegacion = document.querySelector('#principal');
+
+//childNodes muestra los nodos hijos, considerando como nodos los espacios que hay entre las etiquetas
+console.log(navegacion.childNodes); 
+
+//muestra los nodos hijos, sin considerar los espacios entre etiquetas
+console.log(navegacion.children);
+
+//muestra el nombre del nodo
+console.log(navegacion.children[1].nodeName);
+
+//regresa un entero, muestra el tipo de nodo, 
+// 1. Elemento HTml
+//2. Atributo
+//3. Texto
+//8. comentarios
+//9.documentos
+//10. doctype
+console.log(navegacion.children[1].nodeType);
+
+//se puede modificar los atributos de un nodo hijo:
+
+navegacion.children[1].textContent = 'Nuevo enlace';
+navegacion.children[1].style.backgroundColor = 'blue';
+navegacion.children[1].style.color = 'white';
+
+
+const barra = document.querySelector('.barra');
+console.log(barra.children[0].children[0].children);
+
+//para mostrar el ultimo hijo, considerando como nodos los espacios entre las etiquetas
+
+const cursos = document.querySelectorAll('.card');
+console.log(cursos[0].lastChild);
+
+//sin considerar los espacios como nodos
+
+console.log(cursos[0].lastElementChild);
+//para mostrar el primer nodo hijo
+console.log(cursos[0].firstElementChild);
+
+//para contanar el numero de nodos hijos
+console.log(cursos[0].childElementCount);
