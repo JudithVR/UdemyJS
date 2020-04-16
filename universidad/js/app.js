@@ -172,3 +172,68 @@ console.log(cursos[0].firstElementChild);
 
 //para contanar el numero de nodos hijos
 console.log(cursos[0].childElementCount);
+
+//traversing del hijo al padre
+
+const enlac = document.querySelectorAll('.enlace');
+console.log(enlac);
+console.log('nodo hijo:');
+console.log(enlac[0]);
+console.log('nodo padre:');
+console.log(enlac[0].parentElement);
+console.log('nodo padre-padre:');
+console.log(enlac[0].parentElement.parentElement);
+
+//se puede combinar parent y children
+
+console.log(cursos);
+
+console.log(cursos[0].parentElement.parentElement.parentElement.children[0].textContent = 'hola desde traversing');
+
+//previoussibling regresa el elemento anterior a un nodo, que este en el mismo nivel, es decir un nodo hermano
+
+//regresa el nodo anterior considerando los espacios entre las etiquetas
+console.log(enlaces[4]);
+console.log(enlaces[4].previousSibling);
+
+//regresa el nodo anterior sin considerar los espacios entre las etiquetas
+console.log(enlaces[4].previousElementSibling);
+
+//nextsibling regresa el elemento siguiuente a un nodo, que este en el mismo nivel, es decir un nodo hermano
+
+//regresa el nodo siguiente, considerando los espacios entre etiquetas
+console.log(enlaces[0]);
+console.log(enlaces[0].nextSibling);
+
+//regresa el nodo siguiente, sin considerar los espacios entre etiquetas
+
+console.log(enlaces[0].nextElementSibling);
+
+
+//creacion de elementos
+
+//se crea un nuevo enlace
+const nuevoEnlace = document.createElement('a'); 
+
+//agregando clase al enlace
+nuevoEnlace.className = 'enlace';
+
+//añadiendo id
+nuevoEnlace.id = 'nuevo-id';
+
+//atributo href
+nuevoEnlace.setAttribute('href','#');
+
+//añadir texto
+nuevoEnlace.textContent = 'Enlace nuevo';
+
+//otra forma de añadir texto 
+nuevoEnlace.appendChild(document.createTextNode('  con createTextNOde'));
+
+//para agregar el enlace al html
+document.querySelector('#secundaria').appendChild(nuevoEnlace);
+
+console.log(nuevoEnlace);
+
+console.log(document.querySelector('#secundaria'));
+
