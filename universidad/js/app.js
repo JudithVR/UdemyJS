@@ -237,3 +237,87 @@ console.log(nuevoEnlace);
 
 console.log(document.querySelector('#secundaria'));
 
+//reemplazando elementos
+
+const nuevoHeader = document.createElement('h2');
+
+//agregando id
+nuevoHeader.id = 'encabezado';
+
+//agregando texto
+nuevoHeader.appendChild(document.createTextNode('Los mejores cursos'));
+
+//para reemplazar el elemento anterior
+
+const anterior = document.querySelector('#encabezado');
+
+const elementoPadre = document.querySelector('#lista-cursos');
+
+//reemplazando
+
+elementoPadre.replaceChild(nuevoHeader,anterior);
+
+console.log(nuevoHeader);
+
+//Agregando y quitando elementos
+
+let enlaces1 = document.querySelectorAll('.enlace');
+console.log(enlaces1);
+let navegacion1 = document.querySelector('#principal');
+
+//eliminacion desde el selector
+enlaces1[0].remove(); 
+console.log(enlaces1);
+//eliminacion desde el padre
+
+navegacion1.removeChild(enlaces1[1]);
+console.log(navegacion1);
+
+//agregando atributos
+
+let primerLi = document.querySelector('.enlace');
+let element;
+
+//obteniendo una clase
+
+element = primerLi.className;
+console.log(element);
+
+//agregando una clase 
+
+element = primerLi.classList.add('nueva-clase');
+
+//listando las clases de un elemento
+
+element = primerLi.classList;
+console.log(element);
+
+//eliminando la clase agregada 
+element = primerLi.classList.remove('nueva-clase');
+console.log(element);
+
+//leyendo atributos
+
+element = primerLi.getAttribute('href'); //regresa el valor del atributo href
+console.log(element);
+
+//para dar un valor a un atributo
+
+primerLi.setAttribute('href','http:7/nuevo_ref'); 
+element = primerLi; 
+console.log(element);
+
+//para comprobar que un elemento tiene un atributo
+
+element = primerLi.hasAttribute('href');
+console.log(element);
+
+//eliminar un atributo
+primerLi.setAttribute('data-id',20);
+element = primerLi;
+console.log(element);
+
+primerLi.removeAttribute('data-id');
+ element = primerLi;
+console.log(element);
+
