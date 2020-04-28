@@ -101,3 +101,74 @@ function obtenerEvento3(e){
     console.log(`Evento: ${e.type}`); //con e.type se obtiene el tipo de evento 
     
 }
+
+//event bubbling, burbuja de eventos, se da cuando hay un evento asignando a un elemento que esta dentro de otro. 
+
+let card = document.querySelector('.card');
+let infoCurso = document.querySelector('.info-card');
+let agregarCarrito = document.querySelector('.agregar-carrito');
+/*
+card.addEventListener('click',function(){
+    console.log('click en card');
+});
+
+infoCurso.addEventListener('click',function(){
+    console.log('click en Info curso');
+});
+
+agregarCarrito.addEventListener('click',function(){
+    console.log('click en agregar carrito');
+});
+
+*/
+//para evitar la propagacion de eventos, se usa stopPropagation
+
+card.addEventListener('click',function(e){
+    console.log('click en card');
+    e.stopPropagation();
+});
+
+infoCurso.addEventListener('click',function(e){
+    console.log('click en Info curso');
+    e.stopPropagation();
+});
+
+agregarCarrito.addEventListener('click',function(e){
+    console.log('click en agregar carrito');
+    e.stopPropagation();
+});
+
+//delegation
+
+document.body.addEventListener('click', eliminarElemento);
+
+
+function eliminarElemento(e){
+    e.preventDefault(); //para prevenir un evento o accion por default
+    console.log('click');
+    console.log(e.target.classList); //para mostrar la clase
+}
+
+//delegation esperar un click en cualquier lugar y verificar que elemento se esta haciendo click y ejecutar codigo 
+
+document.body.addEventListener('click', eliminarElemento2);
+
+
+function eliminarElemento2(e){
+    e.preventDefault(); //para prevenir un evento o accion por default
+    //contains() verifica que lo que se le pasa como parametro se encuentre
+    if(e.target.classList.contains('borrar-curso')){
+        console.log('si!');
+        console.log(e.target.parentElement.parentElement.remove());
+    }else {
+        console.log('no!'); 
+    }
+
+    if(e.target.classList.contains('agregar-carrito')) {
+        console.log('Curso agregado');
+    }
+    
+}
+
+
+
